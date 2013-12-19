@@ -17,7 +17,6 @@ Atmos.handler('/platform', function() {
 			}; 
 }).toView();
 
-
 Atmos.handler('/', function() {}).toView('home');
 
 /*
@@ -35,7 +34,7 @@ Atmos.handler('/login', function(req, res) {
 		} else {
 			loginResult.result = "succeeded";
 			// Redirect
-			res.redirect = "/contents";
+			res.redirect("/contents");
 		}
 	} else {
 		loginResult.result = "not available";
@@ -47,7 +46,7 @@ Atmos.handler('/login', function(req, res) {
 	// Session
 	req.session.userId = userId;
 	
-	return loginResult;
+	//return loginResult;
 }).toView();
 
 
@@ -71,17 +70,22 @@ Atmos.handler('/user/{id}', function(req) {
 	var result = new Object();
 	result.id = id;
 	
-	return result;
+	//return result;
+	//return "{'id' : '" + id + "'}";
+	return "<root><id>" + id + "</id></root>";
 });
 
 
 Atmos.handler('/blog/{id}', function(req) {
+	/*
 	var blog = new com.skp.milonga.externals.blog.model.Blog();
 	blog.setId(id);
 	blog.setTitle("This is " + id + "'s blog.");
+	*/
 	
-	var result = new Object();
-	result.blog = blog;
+	var blog = req.bindAs('com.skp.blog.model.Blog');
+	blog.setId(id);
+	blog.setTitle("This is " + id + "'s blog.");
 	
 	return blog;
 });
@@ -90,6 +94,11 @@ Atmos.handler('/blog/{id}', function(req) {
 Atmos.handler('/end', function() {
 	return 'the end.';
 });
+
+
+Atmos.handler('/search', function(req, res) {
+    
+}).redirect('http://www.google.com');
 
 
 //Atmos.url('/library').response({"library" : "rhino"});
