@@ -13,8 +13,12 @@
 # classes
 *.class
 target
+classes
 
 # package
 *.jar
 *.war
 *.ear
+
+# idea
+*.iml
