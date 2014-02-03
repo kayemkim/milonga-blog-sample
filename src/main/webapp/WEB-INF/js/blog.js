@@ -101,6 +101,11 @@ Atmos.handler('/search', function(req, res) {
 }).redirect('http://www.google.com');
 
 
+Atmos.handler('/httpMethodCheck', function() {
+	return 'method check succeed!';
+}, 'POST');
+
+
 //Atmos.url('/library').response({"library" : "rhino"});
 //
 //

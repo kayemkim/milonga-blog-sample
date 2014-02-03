@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.skp</groupId>
-	<artifactId>blog</artifactId>
+	<artifactId>milonga-blog-sample</artifactId>
 	<name>milonga-blog-sample</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
@@ -13,7 +13,7 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
-	<repositories>
+	<!-- <repositories>
         <repository>
             <id>skp-public</id>
             <name>skplanet public repository</name>
@@ -25,7 +25,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories> -->
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -132,16 +132,16 @@
 		
 		<!-- Milonga -->
 		<dependency>
-			<groupId>com.skp</groupId>
+			<groupId>com.skplanet</groupId>
 			<artifactId>milonga</artifactId>
-			<version>0.1.1</version>
+			<version>0.11.0</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.3.1</version>
-        </dependency>
+        </dependency> -->
                 
 	</dependencies>
     <build>

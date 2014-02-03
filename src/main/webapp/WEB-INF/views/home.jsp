@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <form method="post" action="/blog/login" class="login">
+  <form method="post" action="login" class="login">
     <p>
       <label for="login">Email:</label>
       <input type="text" name="userId" id="userId" value="">
